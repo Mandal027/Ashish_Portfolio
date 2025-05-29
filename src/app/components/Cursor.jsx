@@ -13,6 +13,8 @@ const Cursor = () => {
   const [cursorSymbol, setCursorSymbol] = useState("<>");
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const moveCursor = (e) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
